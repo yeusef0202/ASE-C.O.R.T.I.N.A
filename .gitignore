@@ -1,1 +1,7 @@
 build/
+components/
+common/
+sdkconfig.*
+Makefile
+dependencies.lock
+managed_components/

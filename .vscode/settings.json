@@ -6,5 +6,10 @@
     "idf.customExtraVars": {
         "IDF_TARGET": "esp32c3"
     },
-    "idf.flashType": "UART"
+    "idf.flashType": "UART",
+    "files.associations": {
+        "esp_rmaker_schedule.h": "c",
+        "esp_rmaker_ota.h": "c",
+        "esp_rmaker_common_events.h": "c"
+    }
 }
