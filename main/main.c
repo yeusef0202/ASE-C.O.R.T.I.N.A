@@ -50,19 +50,47 @@ static const char *TAG = "StepperApp";
 static bool direction = true;
 static int enable = 0;
 static int step_count = 0; // Get the step position to determine when to stop ; 0- Full open, X - Full close
+static int user_value = 0; // 0 - Auto, 1 - Down, 2 - Up, 3 - Stop
 esp_rmaker_device_t *cortina_device;
 
 static esp_err_t write_cb(const esp_rmaker_device_t *device, const esp_rmaker_param_t *param,
                                             const esp_rmaker_param_val_t val, void *priv_data, esp_rmaker_write_ctx_t *ctx)
 {
-    ESP_LOGI(TAG, "Write callback called for device: %s, param: %s, value: %d",
-             esp_rmaker_device_get_name(device), esp_rmaker_param_get_name(param), val.val.i);
-
+    // Get the user value from the parameter
+    if(!strcmp(esp_rmaker_param_get_name(param), "Direction"))
+    {
+        const char *value = val.val.s;
+        if (strcmp(value, "Up") == 0)
+        {   
+            user_value = 2;
+        }
+        else if (strcmp(value, "Down") == 0)
+        {
+            user_value = 1;
+        }
+        else if (strcmp(value, "Auto") == 0)
+        {
+            user_value = 0;
+        }
+        else if (strcmp(value, "Stop") == 0)
+        {
+            user_value = 3;
+        }
+        ESP_LOGI(TAG, "Direction set to: %s", value);
+    }
+    else
+    {
+        ESP_LOGW(TAG, "Unknown parameter: %s", esp_rmaker_param_get_name(param));
+    }
+    esp_rmaker_param_update(param, val);
     return ESP_OK;
 }
 
 
-
+void factory_reset() {
+    nvs_flash_erase();
+    esp_restart();
+}
 
 void stepper_task(void *arg)
 {
@@ -71,13 +99,13 @@ void stepper_task(void *arg)
         gpio_set_level(ENABLE_PIN, enable);
         if (enable)
         {
-            ESP_LOGI(TAG, "Stepper motor is disabled");
+            // ESP_LOGI(TAG, "Stepper motor is disabled");
             vTaskDelay(pdMS_TO_TICKS(100)); // Wait before next check
             continue;
         }
         if (step_count > UPPER_LIMIT || step_count < LOWER_LIMIT)
         {
-            step_count += (direction ? 1 : -1);
+            step_count -= (direction ? 1 : -1);
             if (step_count >= UPPER_LIMIT)
                 step_count = UPPER_LIMIT;
             else if (step_count <= LOWER_LIMIT)
@@ -87,7 +115,7 @@ void stepper_task(void *arg)
             continue;
         }
         ESP_LOGI(TAG, "Current step count: %d", step_count);
-        step_count += (direction ? 1 : -1);
+        step_count -= (direction ? 1 : -1);
 
         gpio_set_level(DIR_PIN, direction);
         gpio_set_level(STEP_PIN, 1);
@@ -164,6 +192,8 @@ void app_main(void)
 
     // Start the ESP RainMaker core
     // esp_rmaker_console_init();
+
+    // factory_reset();
     app_network_init();
 
     esp_rmaker_config_t rainmaker_cfg = {
@@ -198,37 +228,51 @@ void app_main(void)
     app_wifi_start(POP_TYPE_RANDOM);
 
 
+    xTaskCreate(stepper_task, "stepper_task", 2048, NULL, 5, NULL);
+    ESP_LOGI(TAG, "Stepper task started");
     while (1)
     {
-        vTaskDelay(pdMS_TO_TICKS(1000));
+
+        switch (user_value)
+        {
+        case 0:
+            float lux = 0.0;
+            if (bh1750_read_light(&lux) == ESP_OK)
+            {
+                ESP_LOGI(TAG, "Light level: %.2f lux", lux);
+                if (abs(LIGHT_THRESHOLD_HALF - lux + HISTERESIS) > LIGHT_THRESHOLD)
+                {
+                    ESP_LOGI(TAG, "Light level is above threshold, enabling stepper motor");
+                    enable = 0;
+                    direction = !(lux > LIGHT_THRESHOLD_HALF);
+                }
+                else
+                {
+                    // enable = 0;
+                    ESP_LOGI(TAG, "Light level is below threshold, disabling stepper motor");
+                    enable = 1; // Disable stepper motor
+                }
+            }
+            else
+            {
+                ESP_LOGE(TAG, "Failed to read light sensor");
+            }
+            break;
+        case 1:
+            enable = 0;
+            direction = 0;
+            break;
+        case 2:
+            enable = 0;
+            direction = 1;
+            break;
+        case 3:
+            enable = 1; // Stop the stepper motor
+            ESP_LOGI(TAG, "Stepper motor stopped by user command");
+            break;
+        default:
+            break;
+        }
+        vTaskDelay(pdMS_TO_TICKS(200));
     }
 }
-    
-//     xTaskCreate(stepper_task, "stepper_task", 2048, NULL, 5, NULL);
-//     ESP_LOGI(TAG, "Stepper task started");
-//     while (1)
-//     {
-//         float lux = 0.0;
-//         if (bh1750_read_light(&lux) == ESP_OK)
-//         {
-//             ESP_LOGI(TAG, "Light level: %.2f lux", lux);
-//             if (abs(LIGHT_THRESHOLD_HALF - lux + HISTERESIS) > LIGHT_THRESHOLD)
-//             {
-//                 ESP_LOGI(TAG, "Light level is above threshold, enabling stepper motor");
-//                 enable = 0;
-//                 direction = (lux > LIGHT_THRESHOLD_HALF);
-//             }
-//             else
-//             {
-//                 // enable = 0;
-//                 ESP_LOGI(TAG, "Light level is below threshold, disabling stepper motor");
-//                 enable = 1; // Disable stepper motor
-//             }
-//         }
-//         else
-//         {
-//             ESP_LOGE(TAG, "Failed to read light sensor");
-//         }
-//         vTaskDelay(pdMS_TO_TICKS(200));
-//     }
-// }
