@@ -1,0 +1,10 @@
+Avaliação do Projeto:
+Dado que cumprimos os objetivos principais, como a conecção dos sensores junto com o controlo manual do utilizador usando um telemóvel wireless para tal, acreditamos que o projeto merece um 18, apresentando todos os pontos importantes para a demonstração do projeto, mas tendo possibilidades de melhoria, como no aspeto da velocidade ou da construção da estrutura que o protege.
+
+Auto Avaliação:
+Anderson Aoki 50%:
+- Ligações do Hardware
+- Esp32 Rainmaker
+António Almeida 50%:
+- Algoritmo da cortina
+- Conecção com o telemóvel

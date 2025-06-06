@@ -1,0 +1,148 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" version="27.1.1">
+  <diagram name="Page-1" id="5H1JVSV0mEslfH-t9nko">
+    <mxGraphModel dx="2224" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ZCvjuCKzFitpUWFedysh-1" value="&lt;b&gt;White Board&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="-140" y="90" width="650" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-2" value="&lt;b&gt;TMC2208&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="210" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-44" value="ESP32-C3" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="160" y="180" width="340" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-4" value="&lt;b&gt;ESP RainMaker&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="370" y="240" width="110" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-31" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="262" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-40" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="372.5" y="332" width="105" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-5" value="Connects with&amp;nbsp;&lt;div&gt;cellphone&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="380" y="261" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-7" value="&lt;b&gt;Main Logic&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="190" y="387" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-10" value="Gets the Client choice:&lt;div&gt;&lt;div&gt;- UP&lt;/div&gt;&lt;div&gt;- DOWN&lt;/div&gt;&lt;div&gt;-AUTO&lt;/div&gt;&lt;div&gt;-STOP&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="365" y="337" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-11" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ZCvjuCKzFitpUWFedysh-40" target="ZCvjuCKzFitpUWFedysh-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="410" as="sourcePoint" />
+            <mxPoint x="420" y="360" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="425" y="440" />
+              <mxPoint x="420" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-13" value="Change direction&amp;nbsp;&lt;div&gt;and enable based on&lt;br&gt;given choice or if Auto,&amp;nbsp;&lt;/div&gt;&lt;div&gt;based on Light Value&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="185" y="412" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-14" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="ZCvjuCKzFitpUWFedysh-7" target="ZCvjuCKzFitpUWFedysh-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="310" y="470" as="sourcePoint" />
+            <mxPoint x="190" y="545" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="5" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-18" value="&lt;b&gt;Cellphone&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="690" y="262" width="130" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-19" value="&lt;b&gt;ESP RainMaker&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="700" y="290" width="110" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-24" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="320" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ZCvjuCKzFitpUWFedysh-20" target="ZCvjuCKzFitpUWFedysh-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-20" value="Connects with&amp;nbsp;&lt;div&gt;the ESP32&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="710" y="320" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-22" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="ZCvjuCKzFitpUWFedysh-26" target="ZCvjuCKzFitpUWFedysh-40">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700.6599999999999" y="412" as="sourcePoint" />
+            <mxPoint x="477.5" y="367.72" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="640" y="400" />
+              <mxPoint x="640" y="372" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-23" value="After Device Reply" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="746" y="357" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-26" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="380" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-21" value="Chooses an action&amp;nbsp;&lt;div&gt;from a&amp;nbsp;&lt;/div&gt;&lt;div&gt;dropdown menu&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="705" y="375" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-27" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.009;exitY=0.46;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="ZCvjuCKzFitpUWFedysh-20" target="ZCvjuCKzFitpUWFedysh-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="704.9999999999999" y="329.3400000000001" as="sourcePoint" />
+            <mxPoint x="654.37" y="320.66" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="670" y="338" />
+              <mxPoint x="670" y="290" />
+              <mxPoint x="670" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-32" value="&lt;font size=&quot;1&quot;&gt;Data Request&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="580" y="250" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-33" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.018;entryY=0.75;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="ZCvjuCKzFitpUWFedysh-20">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="290" as="sourcePoint" />
+            <mxPoint x="550" y="281" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="560" y="290" />
+              <mxPoint x="640" y="290" />
+              <mxPoint x="640" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-34" value="&lt;font size=&quot;1&quot;&gt;Device Parameters Reply&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="540" y="290" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-41" value="&lt;font size=&quot;1&quot;&gt;Choice Data Send&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="560" y="375" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-43" value="&lt;font size=&quot;1&quot;&gt;Direct Connection&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="412" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-46" value="&lt;b&gt;BH1750&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="550" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-47" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="ZCvjuCKzFitpUWFedysh-46" target="ZCvjuCKzFitpUWFedysh-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="225" y="562" as="sourcePoint" />
+            <mxPoint x="-30" y="440" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="245" y="605" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-48" value="&lt;font size=&quot;1&quot;&gt;I2C Communication&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="110" y="610" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-49" value="&lt;font size=&quot;1&quot;&gt;Read Light Value&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="15" y="590" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZCvjuCKzFitpUWFedysh-50" value="&lt;font size=&quot;1&quot;&gt;Move Step by Step&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-25" y="250" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
