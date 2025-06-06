@@ -12,7 +12,7 @@
 #include <nvs_flash.h>
 
 //---------------------------------------------
-
+// ESP RainMaker includes, to download : https://github.com/espressif/esp-rainmaker.git
 #include <esp_rmaker_core.h>
 #include <esp_rmaker_standard_types.h>
 #include <esp_rmaker_standard_params.h>
